@@ -19,30 +19,14 @@ hbs.registerPartials(__dirname + '/views/parciales');
 app.set('view engine', 'hbs');
 
 
-const getInfo = async(ciudad) => {
-    try {
-        const coords = await ubicacion.getCiudadLatLon(ciudad);
-        const temp = await clima.getClima(coords.lat, coords.lon);
-        return temp;
-    } catch (e) {
-        return `No se pudo determinar el clima de ${ ciudad }`;
-    }
-}
-
-quito = getInfo('Quito')
-        .then(console.log)
-        .catch(console.log) 
-
-
-
 app.get('/', function(req, res) {
     res.render('home', {
-
-    });
+            });
 });
 
 app.get('/mundo', (req, res) => {
-    res.render('mundo');
+    res.render('mundo', {
+    });
 });
 
 app.listen(port, () => {

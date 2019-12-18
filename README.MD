@@ -1,4 +1,4 @@
-### Servidor Web + Express + HBS + Heroku
+### Servidor Web + Express + HBS 
 
 Recuerda instalar las dependencias:
 
